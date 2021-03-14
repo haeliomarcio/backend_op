@@ -1,0 +1,431 @@
+{
+	"info": {
+		"_postman_id": "76d23fa3-9ca1-41f1-b450-10a2198679d9",
+		"name": "Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Journalists",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "hmarciogferreira@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{host}}/login",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "José",
+									"type": "text"
+								},
+								{
+									"key": "lastname",
+									"value": "Ribeiro",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "joseribeiro1@teste.com.br",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{host}}/register",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxNTc2Mzg4MSwiZXhwIjoxNjE1NzY3NDgxLCJuYmYiOjE2MTU3NjM4ODEsImp0aSI6IjdVTHFHSkNNcmRhVHJXQ3YiLCJzdWIiOjEsInBydiI6IjE1NWQ0YjdmNzA5YWQ4YmQ5ODdjN2RmYTE2NGQ2ZTgzY2EyNGU2NWUifQ.ZLaB6sClMmbJ4DwLcF57WgeiE3vJ_Jwlcv0LXEyEXCo",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{host}}/me",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxNTc2MDk2MywiZXhwIjoxNjE1NzY0NTYzLCJuYmYiOjE2MTU3NjA5NjMsImp0aSI6InYzOXp4ZjdGVHFscWc2dEMiLCJzdWIiOjEsInBydiI6IjE1NWQ0YjdmNzA5YWQ4YmQ5ODdjN2RmYTE2NGQ2ZTgzY2EyNGU2NWUifQ.oDmJuYBIv3efvwOwTfGWxaKTnshjpHBvUje8p5dA61k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"journalist_id\": 1,\n    \"type_id\": 1,\n    \"title\": \"Vacina para Todos\",\n    \"description\": \"Brasil realiza compra de mais 400mi de vacinas.\",\n    \"content\": \"Brasil realiza compra de mais 400mi de vacinas...\",\n    \"image\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/news/create",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"news",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxNTc2MDk2MywiZXhwIjoxNjE1NzY0NTYzLCJuYmYiOjE2MTU3NjA5NjMsImp0aSI6InYzOXp4ZjdGVHFscWc2dEMiLCJzdWIiOjEsInBydiI6IjE1NWQ0YjdmNzA5YWQ4YmQ5ODdjN2RmYTE2NGQ2ZTgzY2EyNGU2NWUifQ.oDmJuYBIv3efvwOwTfGWxaKTnshjpHBvUje8p5dA61k"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"journalist_id\": 1,\n    \"type_id\": 1,\n    \"title\": \"Vacina Covid para Todos\",\n    \"description\": \"Brasil realiza compra de mais 400mi de vacinas.\",\n    \"content\": \"Brasil realiza compra de mais 400mi de vacinas...\",\n    \"image\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/news/update/2",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"news",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxNTc2MDk2MywiZXhwIjoxNjE1NzY0NTYzLCJuYmYiOjE2MTU3NjA5NjMsImp0aSI6InYzOXp4ZjdGVHFscWc2dEMiLCJzdWIiOjEsInBydiI6IjE1NWQ0YjdmNzA5YWQ4YmQ5ODdjN2RmYTE2NGQ2ZTgzY2EyNGU2NWUifQ.oDmJuYBIv3efvwOwTfGWxaKTnshjpHBvUje8p5dA61k"
+							}
+						],
+						"url": {
+							"raw": "http://{{host}}/news/delete/2",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"news",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxNTc2MDk2MywiZXhwIjoxNjE1NzY0NTYzLCJuYmYiOjE2MTU3NjA5NjMsImp0aSI6InYzOXp4ZjdGVHFscWc2dEMiLCJzdWIiOjEsInBydiI6IjE1NWQ0YjdmNzA5YWQ4YmQ5ODdjN2RmYTE2NGQ2ZTgzY2EyNGU2NWUifQ.oDmJuYBIv3efvwOwTfGWxaKTnshjpHBvUje8p5dA61k"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"jornalist_id\": 1,\n    \"type_id\": 1,\n    \"title\": \"Vacina Covid para Todos\",\n    \"description\": \"Brasil realiza compra de mais 400mi de vacinas.\",\n    \"content\": \"Brasil realiza compra de mais 400mi de vacinas...\",\n    \"image\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/news/me",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"news",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Type",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxNTc2MjI1OSwiZXhwIjoxNjE1NzY1ODU5LCJuYmYiOjE2MTU3NjIyNTksImp0aSI6InhidWhSN2w2Q2ZlWTBibmUiLCJzdWIiOjEsInBydiI6IjE1NWQ0YjdmNzA5YWQ4YmQ5ODdjN2RmYTE2NGQ2ZTgzY2EyNGU2NWUifQ.GdV8QxbBMoBAfaF63jtsOxJZ50_ayRv4x-UzEG-DPA0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/news/type/1",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"news",
+								"type",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Types",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxNTc2MDk2MywiZXhwIjoxNjE1NzY0NTYzLCJuYmYiOjE2MTU3NjA5NjMsImp0aSI6InYzOXp4ZjdGVHFscWc2dEMiLCJzdWIiOjEsInBydiI6IjE1NWQ0YjdmNzA5YWQ4YmQ5ODdjN2RmYTE2NGQ2ZTgzY2EyNGU2NWUifQ.oDmJuYBIv3efvwOwTfGWxaKTnshjpHBvUje8p5dA61k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"journalist_id\": 1,\n    \"name\": \"Saúde\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/type/create",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"type",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxNTc2MDk2MywiZXhwIjoxNjE1NzY0NTYzLCJuYmYiOjE2MTU3NjA5NjMsImp0aSI6InYzOXp4ZjdGVHFscWc2dEMiLCJzdWIiOjEsInBydiI6IjE1NWQ0YjdmNzA5YWQ4YmQ5ODdjN2RmYTE2NGQ2ZTgzY2EyNGU2NWUifQ.oDmJuYBIv3efvwOwTfGWxaKTnshjpHBvUje8p5dA61k"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"journalist_id\": 1,\n    \"name\": \"Saúde 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/type/update/1",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"type",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxNTc2MDk2MywiZXhwIjoxNjE1NzY0NTYzLCJuYmYiOjE2MTU3NjA5NjMsImp0aSI6InYzOXp4ZjdGVHFscWc2dEMiLCJzdWIiOjEsInBydiI6IjE1NWQ0YjdmNzA5YWQ4YmQ5ODdjN2RmYTE2NGQ2ZTgzY2EyNGU2NWUifQ.oDmJuYBIv3efvwOwTfGWxaKTnshjpHBvUje8p5dA61k"
+							}
+						],
+						"url": {
+							"raw": "http://{{host}}/type/delete/3",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"type",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxNTc2MDk2MywiZXhwIjoxNjE1NzY0NTYzLCJuYmYiOjE2MTU3NjA5NjMsImp0aSI6InYzOXp4ZjdGVHFscWc2dEMiLCJzdWIiOjEsInBydiI6IjE1NWQ0YjdmNzA5YWQ4YmQ5ODdjN2RmYTE2NGQ2ZTgzY2EyNGU2NWUifQ.oDmJuYBIv3efvwOwTfGWxaKTnshjpHBvUje8p5dA61k"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/type/me",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"type",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
